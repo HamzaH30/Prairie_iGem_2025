@@ -215,9 +215,9 @@ export function ModelingPage() {
                 <h4 className="font-semibold mb-2">Simulation Results</h4>
                 <ul className="list-disc pl-5 space-y-2">
                   <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet 10⁸ CFU</li>
-                  <li>Lorem ipsum dolor sit amet: 0.42 per day</li>
-                  <li>Lorem ipsum dolor sit amet: 96 hours</li>
+                  <li>Lorem ipsum dolor sit amet</li>
+                  <li>Lorem ipsum dolor sit amet</li>
+                  <li>Lorem ipsum dolor sit amet</li>
                 </ul>
               </div>
             </div>
