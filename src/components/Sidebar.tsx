@@ -110,13 +110,6 @@ export function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
         {/* Sidebar header with close button */}
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold">On This Page</h2>
-          <button
-            className="p-1 text-gray-500 hover:text-violet-text"
-            onClick={toggleSidebar}
-            aria-label="Close sidebar"
-          >
-            <X size={18} />
-          </button>
         </div>
 
         {/* Page section navigation links */}
