@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:wght@500&family=Hind+Madurai:wght@400&display=swap');
+
+@layer base {
+  :root {
+    /* Design System Colors */
+    --pink-primary: #f7b2bd; /* Cherry Blossom */
+    --gray-secondary: #c2d9c5; /* Ash Gray */
+    --celeste: #b8f8fa; /* Accent hover */
+    --magenta-accent: #b569b4; /* CTA gradient */
+    --white: #fcfcfc; /* Background */
+    --violet-text: #482f48; /* Body text */
+    /* Navigation Gradient */
+    --nav-gradient-from: #FCE7F3;
+    --nav-gradient-to: #DCFCE7;
+    /* Shadcn UI Colors */
+    --background: 0 0% 99%;
+    --foreground: 288 23% 23%;
+    --muted: 149 25% 81%;
+    --muted-foreground: 288 23% 33%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 288 23% 23%;
+    --border: 149 25% 81%;
+    --input: 149 25% 81%;
+    --card: 0 0% 99%;
+    --card-foreground: 288 23% 23%;
+    --primary: 347 82% 84%;
+    --primary-foreground: 288 23% 23%;
+    --secondary: 149 25% 81%;
+    --secondary-foreground: 288 23% 23%;
+    --accent: 182 89% 85%;
+    --accent-foreground: 288 23% 23%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 347 82% 84%;
+    --radius: 0.5rem;
+  }
+
+  :root[class~="dark"] {
+    --background: 288 23% 13%;
+    --foreground: 347 82% 94%;
+    --muted: 149 25% 21%;
+    --muted-foreground: 149 25% 71%;
+    --accent: 182 89% 25%;
+    --accent-foreground: 0 0% 99%;
+    --popover: 288 23% 13%;
+    --popover-foreground: 347 82% 94%;
+    --border: 149 25% 31%;
+    --input: 149 25% 31%;
+    --card: 288 23% 13%;
+    --card-foreground: 347 82% 94%;
+    --primary: 347 82% 74%;
+    --primary-foreground: 0 0% 99%;
+    --secondary: 149 25% 31%;
+    --secondary-foreground: 0 0% 99%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 347 82% 74%;
+    --radius: 0.5rem;
+    /* Navigation Gradient in dark mode - slightly darker */
+    --nav-gradient-from: #d8c0d0;
+    --nav-gradient-to: #b8d8bc;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h1 {
+    @apply font-bold text-4xl md:text-5xl lg:text-6xl;
+    font-weight: 700;
+  }
+  h2 {
+    @apply font-semibold text-3xl md:text-4xl lg:text-5xl;
+    font-weight: 600;
+  }
+  h3 {
+    @apply font-medium text-2xl md:text-3xl lg:text-4xl;
+    font-weight: 500;
+  }
+  h4, h5, .lead {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+  }
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+  .lead {
+    @apply text-lg md:text-xl;
+  }
+  body, p, a, li, button, input {
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: 400;
+  }
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-fade-in {
+      animation: fadeIn 200ms ease-out forwards;
+    }
+    .animate-slide-up {
+      animation: slideUp 200ms ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  /* Placeholder for images */
+  .image-placeholder {
+    @apply bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center p-4 text-gray-400 rounded-md;
+    min-height: 200px;
+  }
+}
