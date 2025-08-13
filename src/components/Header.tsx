@@ -1,19 +1,46 @@
+import React from 'react'
+import { Menu } from 'lucide-react'
+
+// Props for header component with menu toggle functions
 interface HeaderProps {
-  title: string;
-  lead: string;
+  toggleSidebar: () => void
+  toggleNav: () => void
 }
 
-export function Header({ title, lead }: HeaderProps) {
+// Sticky header with responsive navigation toggles
+export function Header({ toggleSidebar, toggleNav }: HeaderProps) {
   return (
-    <header className="bg-hero py-5 mb-5">
-      <div className="container h-100">
-        <div className="row h-100 align-items-center">
-          <div className="col-lg-12">
-            <h1 className="display-4 text-white mt-5 mb-2">{title}</h1>
-            <p className="lead mb-5 text-white-50">{lead}</p>
-          </div>
+    <header className="sticky top-0 z-40 bg-white dark:bg-[#482f48] shadow-sm h-16 flex items-center px-4">
+      <div className="flex items-center justify-between w-full">
+        {/* Left side with menu buttons and mobile logo */}
+        <div className="flex items-center gap-4">
+          {/* Mobile navigation toggle */}
+          <button
+            className="p-2 md:hidden"
+            onClick={toggleNav}
+            aria-label="Toggle navigation"
+          >
+            <Menu size={24} />
+          </button>
+
+          {/* Desktop sidebar toggle */}
+          <button
+            className="p-2 hidden md:block"
+            onClick={toggleSidebar}
+            aria-label="Toggle sidebar"
+          >
+            <Menu size={20} />
+          </button>
+
+          {/* Mobile-only logo */}
+          <span className="text-lg font-semibold md:hidden">LacThera</span>
+        </div>
+
+        {/* Right side reserved for additional header elements */}
+        <div className="flex items-center gap-2">
+          {/* Add any header elements here if needed */}
         </div>
       </div>
     </header>
-  );
+  )
 }
